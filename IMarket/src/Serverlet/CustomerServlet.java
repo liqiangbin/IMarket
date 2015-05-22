@@ -7,6 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.catalina.Session;
 
 import pojo.Customer;
 import Dao.CustomerDao;
@@ -22,8 +25,9 @@ public class CustomerServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setCharacterEncoding("UTF-8"); 
-		request.setCharacterEncoding("UTF-8");
+		
+		response.setCharacterEncoding("gbk"); 
+		request.setCharacterEncoding("gbk");
 		String message=request.getParameter("message");
 	PrintWriter  out = response.getWriter();
 	CustomerServlet cus=new CustomerServlet();
@@ -45,13 +49,18 @@ public class CustomerServlet extends HttpServlet {
 			request.getRequestDispatcher("foreground/login.jsp").forward(request, response);
 			
 		}
-		else if(!dao.login(uname, password)){
+		else if(dao.login(uname, password)){
 			
 			request.setAttribute("info", "<h1 align=center  style='color: red'>username or password is error!!!</h1>");
 
 			request.getRequestDispatcher("foreground/login.jsp").forward(request, response);
 			
 		}
+		else{
+		HttpSession session=request.getSession();
+		
+		session.setAttribute("uname",uname);
+		response.sendRedirect("foreground/main.jsp");}
 	}
 	
 	if(message.equals("reg")){		
@@ -65,6 +74,18 @@ public class CustomerServlet extends HttpServlet {
 		out.println(customer.getUname());
 		
 	}
+	
+	if(message.equals("updatemyself")){
+		 String username=new String(request.getParameter("username").getBytes("ISO-8859-1"),"gbk");
+		String password=new String(request.getParameter("password").getBytes("ISO-8859-1"), "gbk");
+		String phone=new String(request.getParameter("phone").getBytes("ISO-8859-1"), "gbk");
+		String email=new String(request.getParameter("email").getBytes("ISO-8859-1"), "gbk");
+		
+		dao.updatemyself(username, password, phone, email);
+		response.sendRedirect("foreground/myself.jsp");
+	
+	}
+	
 	
 	}
 

@@ -6903,6 +6903,7 @@ th {
 		max-width: 100%!important
 	}
 	h2,
+
 	h3,
 	p {
 		orphans: 3;
@@ -20021,12 +20022,3 @@ button.close {
 		display: none!important
 	}
 }
-h2.reg{
-	font-family: éš¶ä¹¦;
-	
-}
-h2.nameh2{
-		font-size:48px;
-		font-family: "Á¥Êé";
-		color: white;
-	}

@@ -4,7 +4,7 @@ public class pj {
 	private int id;
 	private int pid;
 	private String uname;
-	private String picontent;
+	private String pjcontent;
 	private String pjtime;
 	public int getId() {
 		return id;
@@ -24,11 +24,11 @@ public class pj {
 	public void setUname(String uname) {
 		this.uname = uname;
 	}
-	public String getPicontent() {
-		return picontent;
+	public String getPjcontent() {
+		return pjcontent;
 	}
-	public void setPicontent(String picontent) {
-		this.picontent = picontent;
+	public void setPjcontent(String picontent) {
+		this.pjcontent = picontent;
 	}
 	public String getPjtime() {
 		return pjtime;

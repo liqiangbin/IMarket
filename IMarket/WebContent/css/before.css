@@ -73,3 +73,61 @@
 	margin: 0 auto;
 	padding: 30px;
 }
+
+
+
+
+h2.reg{
+	font-family: 隶书;
+	
+}
+	h2.nameh2{
+		font-size:48px;
+		font-family: "隶书";
+		color: white;
+	}
+
+
+.rowtop {
+	font-family: 隶书;
+	font-size: 18px;
+	margin-right: -15px;
+	margin-left: -15px;
+	padding-top: 20px;
+	padding-bottom: 5px;
+}
+.body1{
+	
+	padding-top: 140px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.daohang{
+	padding-left: 100px;
+}
+.lujin{
+	margin-top: 150px;
+	
+}
+.pleft{
+	
+	width: 40%;
+	float: left;
+}
+.pright{
+	width: 60%;
+	padding-right: 100px;
+	float: left;
+}
+.clear{ 
+	clear:both;}
+	.lunbo{
+		padding-left: 200px;
+		padding-right: 200px;
+		
+	}
+.rowtable {
+	width: 100px;
+	padding-left: -15px;
+	
+}
